@@ -1,0 +1,53 @@
+.Button {
+    position: relative;
+    padding: 0 var(--space-s);
+    font-size: var(--font-size-m);
+    line-height: 1;
+    font-family: inherit;
+    color: var(--color-light);
+    background-color: var(--color-interactive-bg);
+    border: none;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow-key);
+    transition: background-color ease var(--transition-normal);
+    cursor: pointer;
+}
+
+.Button-size-s {
+    height: var(--size-s);
+}
+
+.Button-size-m {
+    padding: 0 var(--space-m);
+    height: var(--size-m);
+}
+
+.Button-size-l {
+    padding: 0 var(--space-xl);
+    height: var(--size-l);
+}
+
+.Button:hover {
+    color: var(--color-light-max);
+}
+
+.Button:focus-visible {
+    outline: 2px solid var(--color-interactive);
+    outline-offset: var(--space-xs);
+}
+
+.Button:active {
+    top: 1px;
+    background-color: var(---color-interactive-on-bg);
+    box-shadow: var(--shadow-leak);
+}
+
+.Button.is-active {
+    color: var(--color-fg-invert);
+    background-color: var(--color-light-on);
+}
+
+.Button.is-active:active {
+    top: 1px;
+    background-color: var(--color-light-max);
+}

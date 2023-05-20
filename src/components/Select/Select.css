@@ -1,0 +1,48 @@
+.Select {
+    margin: 0;
+    border-radius: 3px;
+    padding: 0 var(--space-xs);
+    height: var(--size-m);
+    color: var(--color-fg-secondary);
+    font-weight: var(--font-weight-normal);
+    line-height: 1;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-width: 0px;
+    border-style: dotted;
+    border-color: var(--color-border);
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    appearance: none;
+}
+
+.Select-size-s {
+    height: var(--size-s);
+    font-size: var(--font-size-m);
+}
+
+.Select-size-m {
+    height: var(--size-m);
+    font-size: var(--font-size-l);
+}
+
+.Select-size-l {
+    height: var(--size-l);
+    font-size: var(--font-size-xl);
+}
+
+.Select:hover {
+    border-bottom-color: var(--color-border-active);
+    border-bottom-style: solid;
+}
+
+.Select:focus {
+    color: var(--color-interactive-on);
+    border-bottom-style: solid;
+}
+
+.Select:focus,
+.Select:focus-visible {
+    outline: none;
+    border-color: var(--color-interactive);
+}

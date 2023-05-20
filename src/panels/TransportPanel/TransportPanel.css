@@ -1,0 +1,8 @@
+.TransportPanel .PositionInput {
+    width: 4em;
+}
+
+.TransportPanel .actions {
+    display: flex;
+    gap: var(--space-s);
+}

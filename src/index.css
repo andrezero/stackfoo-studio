@@ -1,0 +1,90 @@
+:root {
+    --font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 12px;
+    --space-l: 16px;
+    --space-xl: 24px;
+
+    --size-s: 24px;
+    --size-m: 36px;
+    --size-l: 48px;
+    --size-xl: 64px;
+
+    --radius-s: 2px;
+    --radius-m: 4px;
+    --radius-l: 8px;
+
+    --font-size-xs: 14px;
+    --font-size-s: 14px;
+    --font-size-m: 16px;
+    --font-size-l: 24px;
+    --font-size-xl: 32px;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-heavy: 900;
+
+    --transition-normal: 0.15s;
+
+    --color-fg-primary: #e1e1e1;
+    --color-fg-secondary: #c1c1c1;
+    --color-fg-invert: #1a1a1a;
+    --color-bg-primary: #2a2a2a;
+    --color-bg-stage: #2a2a2a;
+    --color-surface-1: #1a1a1a;
+    --color-surface-1-active: #2a2a2a;
+    --color-border: #414141;
+    --color-border-active: #515151;
+    --color-interactive: #646cff;
+    --color-interactive-on: #535bf2;
+    --color-interactive-bg: var(--color-surface-1);
+    --color-interactive-on-bg: var(--color-surface1-active);
+    --color-light: #5c7b1e;
+    --color-light-on: #86b032;
+    --color-light-max: #9acd32;
+
+    --color-bg-good: #9acd32;
+    --color-bg-meh: #ffa500;
+    --color-bg-bad: #ff4500;
+
+    --shadow-on: 0px 0px 0.5px var(--color-light-max);
+    --shadow-key: 1.2px 1.7px 0px var(--color-light),
+        0px 0.6px 2px var(--color-light);
+    --shadow-leak: 0px 0.5px 2px var(--color-light-on),
+        0px 0px 1px var(--color-light-max);
+}
+
+html {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    font-family: var(--font-family);
+    line-height: 1.5;
+    font-weight: var(--font-weight-normal);
+    color: var(--color-fg-invert);
+    background-color: var(--color-bg-secondary);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    color: var(--color-fg-primary);
+    background-color: var(--color-bg-stage);
+}
+
+a {
+    font-weight: 500;
+    color: var(--color-interactive);
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: var(--color-interactive-on);
+}

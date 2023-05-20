@@ -1,0 +1,64 @@
+.MetronomePanel .BpmInput {
+    width: 4em;
+}
+
+.MetronomePanel .DivInput,
+.MetronomePanel .NumInput {
+    width: 1em;
+}
+
+.MetronomePanel .OnButton {
+    width: var(--size-l);
+}
+
+.MetronomePanel .TapButton {
+    width: var(--size-xl);
+}
+
+.MetronomePanel .Stability {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: var(--space-xs);
+    top: var(--space-xs);
+    bottom: var(--space-xs);
+    width: var(--space-s);
+    margin: 0;
+    font-size: var(--font-size-xs);
+    background-color: #141414;
+    border: 2px solid #141414;
+}
+
+.MetronomePanel .Stability.is-detecting {
+    display: flex;
+}
+
+.MetronomePanel .Stability.has-count {
+    background-color: transparent;
+    border: transparent;
+}
+
+.MetronomePanel .Stability.has-count.is-detecting {
+    color: var(--color-fg-invert);
+}
+
+.MetronomePanel .Stability span {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    background-color: var(--color-bg-good);
+}
+
+.MetronomePanel .Stability.bad span {
+    background-color: var(--color-bg-meh);
+}
+
+.MetronomePanel .Stability.terrible span {
+    background-color: var(--color-bg-bad);
+}
+
+.MetronomePanel .Stability.is-slow span {
+    bottom: auto;
+    top: 50%;
+}

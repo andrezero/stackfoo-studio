@@ -1,0 +1,24 @@
+{
+    "name": "stackfoo.studio",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "format": "prettier -cw .",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "classnames": "^2.3.2",
+        "preact": "^10.13.1",
+        "tone": "^14.8.49",
+        "zustand": "^4.3.8"
+    },
+    "devDependencies": {
+        "@preact/preset-vite": "^2.5.0",
+        "prettier": "^2.8.8",
+        "typescript": "^5.0.2",
+        "vite": "^4.3.2"
+    }
+}

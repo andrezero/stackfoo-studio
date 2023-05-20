@@ -1,0 +1,33 @@
+.PanelTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-s);
+    margin: 0;
+    height: 100%;
+}
+
+.PanelTitle .label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--size-m);
+    color: var(--color-fg-primary);
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-heavy);
+    background: var(--color-surface-1-active);
+    border-radius: var(--radius-m);
+}
+
+.PanelTitle .title {
+    display: none;
+    margin: 0;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-light);
+}
+
+@media screen and (min-width: 768px) {
+    .PanelTitle .title {
+        display: block;
+    }
+}

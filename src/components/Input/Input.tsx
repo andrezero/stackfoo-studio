@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import { ChangeEvent, FC } from 'preact/compat';
+import { ChangeEvent, FC, useState } from 'preact/compat';
 
 import './Input.css';
 
@@ -12,7 +12,10 @@ export interface InputProps {
     min?: number;
     max?: number;
     disabled?: boolean;
-    onValueChange?: (id: string) => void;
+    autoConfirm?: boolean;
+    onValueChange?: (value: string) => void;
+    onConfirmValue?: (value: string) => void;
+    onCancelValue?: () => void;
     className?: string;
 }
 
@@ -25,26 +28,70 @@ export const Input: FC<InputProps> = ({
     min,
     max,
     disabled,
+    autoConfirm,
     onValueChange,
+    onConfirmValue,
+    onCancelValue,
     className,
 }) => {
+    const [currentValue, setCurrentValue] = useState<string | undefined>();
+
     const handleChange = (event: ChangeEvent) => {
         const target = event.target as HTMLInputElement;
-        onValueChange?.(target?.value || '');
+        const v = target?.value || '';
+        setCurrentValue(v);
+        onValueChange?.(v);
     };
 
-    const classNames = cx('Input', className, `Input-size-${size}`);
+    const confirm = () => {
+        setCurrentValue(undefined);
+        onConfirmValue?.(currentValue || '');
+    };
+
+    const cancel = () => {
+        setCurrentValue(undefined);
+        onCancelValue?.();
+    };
+
+    const handleFocus = () => {
+        setCurrentValue(value);
+    };
+
+    const handleBlur = () => {
+        if (autoConfirm) {
+            confirm();
+        } else {
+            cancel();
+        }
+    };
+
+    const handleKeyDown = (ev: KeyboardEvent) => {
+        if (ev.key === 'Escape') {
+            cancel();
+        } else if (ev.key === 'Enter') {
+            confirm();
+        } else if (currentValue === undefined) {
+            setCurrentValue(value);
+        }
+    };
+
+    const classNames = cx('Input', className, `Input-size-${size}`, {
+        'is-modified': currentValue !== undefined && currentValue !== value,
+    });
 
     return (
         <input
             id={id}
             type={type}
-            value={value}
+            value={currentValue === undefined ? value : currentValue}
             maxLength={maxLength}
             min={min}
             max={max}
             disabled={disabled}
             onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onKeyDown={handleKeyDown}
             class={classNames}
         />
     );

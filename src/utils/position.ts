@@ -8,6 +8,6 @@ export const formatPosition = (pos: string): string => {
     return [
         pad(parts[0], 3),
         pad(Number(parts[1]) + 1 + '', 1),
-        pad(Number(parts[2]) + 1 + '', 1),
+        pad(Number(parts[2] || 0) + 1 + '', 1),
     ].join(':');
 };

@@ -15,7 +15,7 @@ export const SplashScreen: FC<SpashScreenProps> = () => {
     const handleClick = async () => {
         setIsStarting(true);
         await setIsReady();
-        console.log('Tone started');
+        console.info('Tone started');
     };
 
     return (

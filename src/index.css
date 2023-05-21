@@ -49,6 +49,8 @@
     --color-bg-meh: #ffa500;
     --color-bg-bad: #ff4500;
 
+    --color-modified-on: var(--color-bg-meh);
+
     --shadow-on: 0px 0px 0.5px var(--color-light-max);
     --shadow-key: 1.2px 1.7px 0px var(--color-light),
         0px 0.6px 2px var(--color-light);

@@ -17,6 +17,7 @@ export const TransportPanel: FC = () => {
     const [position, setPosition] = useState<Time>(Transport.position);
 
     const handleRewindClick = () => {
+        setPosition('0:0:0');
         rewind();
     };
 
@@ -25,11 +26,10 @@ export const TransportPanel: FC = () => {
     };
 
     useEffect(() => {
-        Transport.on('ticks', () => {
+        const loop = new Loop(() => {
             setPosition(Transport.position);
-        });
-
-        new Loop(() => setPosition(Transport.position), '16n').start(0);
+        }, '16n').start(0);
+        return () => loop.dispose;
     }, []);
 
     return (

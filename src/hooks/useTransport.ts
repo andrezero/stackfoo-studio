@@ -1,8 +1,9 @@
-import { useState } from 'preact/hooks';
 import { Transport } from 'tone';
 
+import { useTransportStore } from '../stores/transportStore';
+
 export const useTransport = () => {
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const { isPlaying, setIsPlaying } = useTransportStore();
 
     const toggle = () => {
         if (!isPlaying) {

@@ -2,9 +2,12 @@
     width: 4em;
 }
 
-.MetronomePanel .DivInput,
 .MetronomePanel .NumInput {
-    width: 1em;
+    width: 2em;
+}
+
+.MetronomePanel .DivSelect {
+    width: 2em;
 }
 
 .MetronomePanel .OnButton {

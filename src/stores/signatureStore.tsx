@@ -6,7 +6,7 @@ const DEFAULT_SIG_DIV = 4;
 
 export const MIN_SIG_NUM = 2;
 export const MAX_SIG_NUM = 16;
-export const SIG_DIV_OPTIONS = [4, 8, 16];
+export const SIG_DIV_OPTIONS = [4, 8];
 
 type SignatureState = {
     num: number;

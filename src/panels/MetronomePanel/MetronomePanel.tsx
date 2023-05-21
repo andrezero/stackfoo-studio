@@ -23,10 +23,11 @@ import './MetronomePanel.css';
 
 export const MetronomePanel: FC = () => {
     const { play } = useAudioFeedback();
-    const { count, delta, isDetecting, stable, tap } = useTempoDetector();
-    const { isOn, isReady, toggle } = useMetronome();
-    const { bpm, setBpm } = useTempoStore();
     const { div, num, setDiv, setNum } = useSignatureStore();
+    const { bpm, setBpm } = useTempoStore();
+    const { count, delta, isDetecting, stable, tap } = useTempoDetector();
+    const { isOn, isReady, toggle } = useMetronome(num, div, isDetecting);
+
     const size = delta && Math.min(Math.abs(delta) * 20, 50);
     const isNegative = delta && delta < 0;
 
@@ -54,28 +55,28 @@ export const MetronomePanel: FC = () => {
                 min={MIN_BPM}
                 max={MAX_BPM}
                 className="BpmInput"
-                onValueChange={(b) => setBpm(Number(b))}
+                onConfirmValue={(b) => setBpm(Number(b))}
             />
             <label class="PanelLabel" for="bpm">
                 BPM
             </label>
             <Input
+                className="NumInput"
                 id="Num"
                 type="number"
                 size="s"
                 value={`${num}`}
                 min={MIN_SIG_NUM}
                 max={MAX_SIG_NUM}
-                className="NumInput"
-                onValueChange={(n) => setNum(Number(n))}
+                onConfirmValue={(b) => setNum(Number(b))}
             />
             <span>/</span>
             <Select
+                className="DivSelect"
                 id="Div"
                 type="number"
                 size="s"
                 value={`${div}`}
-                className="DivSelect"
                 onValueChange={(d) => setDiv(Number(d))}
             >
                 {SIG_DIV_OPTIONS.map((option) => (

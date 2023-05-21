@@ -14,9 +14,11 @@ type TempoState = {
 export const useTempoStore = create<TempoState>((set) => ({
     bpm: DEFAULT_BPM,
     setBpm: (bpm) => {
-        Transport.bpm.value = bpm;
+        const value =
+            Math.round(100 * Math.min(Math.max(bpm, MIN_BPM), MAX_BPM)) / 100;
+        Transport.bpm.value = value;
         set(() => {
-            return { bpm };
+            return { bpm: value };
         });
     },
 }));

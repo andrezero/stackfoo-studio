@@ -40,6 +40,11 @@
     border-bottom-style: solid;
 }
 
+.Input.is-modified:focus {
+    color: var(--color-modified-on);
+    border-color: var(--color-modified-on);
+}
+
 .Input:focus,
 .Input:focus-visible {
     outline: none;
